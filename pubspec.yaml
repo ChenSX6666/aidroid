@@ -1,0 +1,50 @@
+name: aidroid
+description: Aidroid - 手机智能助手
+publish_to: 'none'
+version: 3.1.0+33
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  dio: ^5.4.0
+  http: ^1.2.0
+  provider: ^6.1.0
+  shared_preferences: ^2.2.0
+  path_provider: ^2.1.0
+  permission_handler: ^11.3.0
+  url_launcher: ^6.2.0
+  google_fonts: ^6.1.0
+  google_mlkit_text_recognition: ^0.13.0
+  google_mlkit_image_labeling: ^0.12.1
+  uuid: ^4.2.0
+  camera: ^0.11.0
+  image_picker: ^1.1.0
+  flutter_secure_storage: ^9.2.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.1
+
+flutter:
+  uses-material-design: true
+
+  shaders:
+    - shaders/liquid_glass.frag
+
+  fonts:
+    - family: DejaVuSansMono
+      fonts:
+        - asset: assets/fonts/DejaVuSansMono.ttf
+        - asset: assets/fonts/DejaVuSansMono-Bold.ttf
+          weight: 700
+
+flutter_launcher_icons:
+  image_path: "assets/icon.png"
+  android: true
+  adaptive_icon_background: "#00436D"
+  adaptive_icon_foreground: "assets/icon.png"

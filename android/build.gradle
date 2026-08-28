@@ -1,0 +1,33 @@
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        // Fallback for plugins that still reference jcenter() (#69).
+        // usb_serial 0.5.x requires jcenter for dependency resolution.
+        //noinspection GradleDeprecated
+        jcenter()
+    }
+}
+
+rootProject.buildDir = "../build"
+
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+    // Provide flutter compilation defaults for plugins whose build.gradle
+    // references flutter.compileSdkVersion before the Flutter tooling injects it.
+    if (project.name != "app") {
+        project.ext.set("flutter", [
+            compileSdkVersion: 35,
+            minSdkVersion: 29,
+            targetSdkVersion: 36
+        ])
+    }
+}
+
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

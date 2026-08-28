@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accessibility_service_description">Aidroid 使用无障碍服务实现手机操控功能，包括点击、滑动、返回、桌面、文字输入等操作。不会收集任何个人信息。</string>
+</resources>
